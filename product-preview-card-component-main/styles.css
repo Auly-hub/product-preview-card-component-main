@@ -1,121 +1,165 @@
-/* Global styles */
-body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: #f2ebe3; /* light beige background */
-  
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&display=swap');
+
+/* font-familly: monserrat, sans serif 
+font-familly: fraunces, sans serif*/
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
 }
 
-main{
+body{
+  font-family: 'monserrat, sans serif';
+  /* font-size: 14px; */
+  background: hsl(30, 38%, 92%);
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0;
 }
 
-.Parfum-section {
+.container{
+  margin: 30px auto;
+  padding: 0 30px;
+}
+
+.grid{
+  max-width: 700px;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #fff;
+  border-radius: 15px;
+  overflow:hidden;
+}
+
+.img .img{
+  max-width: 100%;
+  display:inherit;
+}
+
+.card-content{
+  padding: 45px;
   display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 2rem;
-  background-color: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.1);
-  max-width: 750px;
-
+  flex-direction:column ;
+  justify-content: space-between;
 }
 
-.perfume-image img {
-  width: 150%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.perfume-text {
-  padding: 50px;
-  padding-left: 150px;
-  display: flex;
-  flex-direction: column;
-  justify-content:left;
-}
-
-h1 {
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 2px;
-  color: #6c7289;
+h6.pro-cat{
   text-transform: uppercase;
-}
-
-h2 {
-  font-family: 'Fraunces', serif;
-  font-size: 32px;
-  color: #1c232b;
-  margin-top: 10px;
-}
-
-p {
-  font-size: 14px;
-  line-height: 1.5;
-  color: #6c7289;
-  margin-top: 10px;
-}
-
-.perfume-price {
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
-}
-
-.perfume-price h3 {
-  font-family: 'Fraunces', serif;
-  color: #3d8168;
-  font-size: 32px;
-  margin-right: 20px;
-}
-
-.perfume-price h4 {
-  font-size: 14px;
-  color: #6c7289;
-  text-decoration: line-through;
-}
-
-/* Button styles */
-button.button {
-  background-color: #3d8168;
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  font-size: 16px;
+  letter-spacing: 3px;
+  font-size: 13px;
+  color: hsl(228, 12%, 48%);
   font-weight: 500;
-  border-radius: 8px;
-  cursor: pointer;
+}
+
+h2.pro-name{
+  font-family: 'Fraunces, sans serif';
+  font-size: 34px;
+  line-height: 1em;
+  color:  hsl(212, 21%, 14%);
+}
+
+p.pro-des{
+  color: hsl(228, 12%, 48%);
+  line-height: 1.6em;
+}
+
+.prices{
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-top: 10px;
-  transition: background-color 0.3s;
+  gap: 1rem;
 }
 
-button.button:hover {
-  background-color: #1a4031;
+p.current-price{
+  font-family: 'Fraunces, sans serif';
+  color:  hsl(158, 36%, 37%);
+  font-size: 28px;
+  font-weight: bold;
 }
 
-button.button img {
-  margin-right: 10px;
-  width: 20px;
-  height: auto;
+p.old-price{
+  color:  hsl(228, 12%, 48%);
+  text-decoration: line-through;
+
 }
 
-/* Attribution styles */
-.attribution {
-  font-size: 12px;
+button.cta{
+  background-color:  hsl(158, 36%, 37%);
+  border: none;
+  padding: 14px 0;
+  border-radius: 12px;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color .3s ease;
+  width: 100%;
+}
+
+button.cta:hover  {
+  background-color:  hsl(157, 33%, 12%);
+}
+
+button.cta img {
+  padding-right:7px;
+}
+
+.footer{
+  margin-top: 2rem;
   text-align: center;
-  margin-top: 20px;
+  font-size: 23px;
 }
 
-.attribution a {
-  color: hsl(228, 45%, 44%);
-  text-decoration: none;
+@media only screen and (max-width: 628px){
+  .grid{
+    grid-template-columns: 1fr;
+  }
+
+  .img img{
+    max-height: 450px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .card-content{
+    display: block;
+  }
+
+  h6.pro-cat, h2.pro-name, p.pro-des, .prices{
+    padding-bottom: 23px;
+  }
+}
+
+@media only screen and (max-width: 375px){
+  .container{
+    margin: 15px auto;
+    padding: 0 15px;
+  }
+
+  .img img{
+    max-height: 290px;
+  }
+
+  .card-content{
+    padding: 24px;
+  }
+
+  h6.pro-cat, h2.pro-name, p.pro-des, .prices{
+    padding-bottom: 16px;
+  }
+
+  h2.pro-name{
+    font-size: 28px;
+  }
+
+  p.pro-des{
+    font-size: 12px;
+  }
+
+  p.current-price{
+    font-size: 23px;
+  }
 }
